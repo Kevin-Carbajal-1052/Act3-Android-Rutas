@@ -1,43 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:carbajalrutas/pagina_inicial.dart';
+import 'package:carbajalrutas/pagina_dos.dart';
+import 'package:carbajalrutas/pagina_tres.dart';
+import 'package:carbajalrutas/pagina_cuatro.dart';
+import 'package:carbajalrutas/pagina_cinco.dart';
+import 'package:carbajalrutas/pagina_seis.dart';
+import 'package:carbajalrutas/pagina_siete.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MisRutas());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MisRutas extends StatelessWidget {
+  const MisRutas({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Rutas entre paginas',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const SecondScreen(),
+        '/third': (context) => const ThirdScreen(),
+        '/fourth': (context) => const FourthScreen(),
+        '/fifth': (context) => const FifthScreen(),
+        '/sixth': (context) => const SixthScreen(),
+        '/seventh': (context) => const SeventhScreen(),
+      },
     );
   }
 }
